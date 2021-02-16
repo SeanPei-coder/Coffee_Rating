@@ -146,3 +146,8 @@ input[type=submit] {
 #selDataset {
   color:#ffffff
 }
+
+#tryButton:hover {
+  background-color:#17a2b8;
+
+}
