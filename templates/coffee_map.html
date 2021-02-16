@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Coffee Map</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+		<!-- Leaflet CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+		integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+		crossorigin=""/>
+
+		<!-- Our CSS -->
+		<link rel='stylesheet' scr='text/css' href="/static/css/style.css">
+		<link rel="stylesheet" href="/static/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>
+
+		<link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	</head>
+	<body class="is-preload">
+
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Coffee Ratings</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="/">Home</a></li>
+											<li><a href="/coffee_map">World Map</a></li>
+											<li><a href="/radar">Radar Chart</a></li>
+											<li><a href="https://coffeerating.herokuapp.com/" target="_blank">Predict Points</a></li>
+											<li><a href="/sean">About Sean Pei</a></li>
+											<li><a href="/gina">About Gina Na</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Coffee Map</h2>
+							<p>Dynamic World Map And Table TO Show Coffee Ratings From 2018.<br/>
+								 Have Fun With It.</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<!-- The div that holds our map -->
+								<div class="container">
+									<div class="row">
+
+									<!-- The div that holds our map -->
+									<div class="col-md-12" >
+
+										<div id="map"></div>
+									</div>
+
+									</div>  
+								</div>
+
+								<div class="container">
+									<!-- Trigger the modal with a button -->
+									<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#numBlend">Try Blend</button>
+
+									<!-- Modal How many countries-->
+									<div id="numBlend" class="modal fade"  role="dialog">
+										<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+
+											<!-- Modal content-->
+											<div class="modal-content">
+											<div class="modal-header">
+												<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+												<h3 class="modal-title">How many to blend?</h3>
+											</div>
+											<div class="modal-body">
+												<form autocomplete="off">
+													<input id='numCountry' type="text" placeholder="PLEASE ENTER INTEGER">
+													
+												</form>
+												
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" id='country' data-toggle="modal" data-target="#percent" data-dismiss="modal">Next</button>
+											</div>
+											</div>
+
+										</div>
+									</div>
+
+									<!-- Modal Percentage-->
+									<div id="percent" class="modal fade" role="dialog">
+										<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	
+											<!-- Modal content-->
+											<div class="modal-content">
+											<div class="modal-header">
+												<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+												<h3 class="modal-title">Choose Countryies and Percentage</h3>
+											</div>
+											
+											<div class="modal-body">
+												<div id='percentBody'>
+
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" id='blend' data-toggle="modal" data-target="#predict" data-dismiss="modal">Blend</button>
+											</div>
+											</div>
+	
+										</div>
+									</div>
+
+									<!-- Modal Predict-->
+									<div id="predict" class="modal fade" role="dialog">
+										<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	
+											<!-- Modal content-->
+											<div class="modal-content">
+											<div class="modal-header">
+												<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+												<h3 class="modal-title">Cup Points of Your Own Blend</h3>
+											</div>
+											<div class="modal-body" id='predict_content'>
+												
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" id='close' data-dismiss="modal">Close</button>
+											</div>
+											</div>
+	
+										</div>
+									</div>
+								</div>
+								<!-- The div that holds table -->
+								<div class="container">
+									<div class="row">
+									<div class="col-md-12" >
+										<div id="table"></div>
+									</div>
+									</div>  
+								</div>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Design: <a href="/sean">Sean Pei</a></li>
+						<li>Design: <a href="/gina">Gina Na</a></li>
+					</ul>
+				</footer>
+
+			</div>
+		
+			<script>
+				$('#numBlend').on('hidden.bs.modal', function(e){
+					   $(this).find('form')[0].reset()
+   
+				});
+
+				$('#percent').on('hidden.bs.modal', function(e){
+					   $(this).find('#percentBody').html(''); 
+					   
+				});
+
+				$('#predict').on('hidden.bs.modal', function(e){
+					   $(this).find('#predict_content').html('');   
+					   
+				});
+			</script>
+			
+
+			  <!-- Leaflet JavaScript -->
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+
+
+
+		<!-- Scripts -->
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.scrollex.min.js"></script>
+		<script src="/static/js/jquery.scrolly.min.js"></script>
+		<script src="/static/js/browser.min.js"></script>
+		<script src="/static/js/breakpoints.min.js"></script>
+		<script src="/static/js/util.js"></script>
+		<script src="/static/js/main.js"></script>
+
+
+		<!-- D3 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+		<!-- API Key -->
+		<script type="text/javascript" src="/static/js/config.js"></script>
+		<!-- Our JavaScript -->
+		
+		<script type="text/javascript" src="/static/js/deleteRows.js"></script>
+		<script type="text/javascript" src="/static/js/createTable.js"></script>
+		<script type="text/javascript" src="/static/js/updateTable.js"></script>
+		<script type="text/javascript" src="/static/js/main_sp.js"></script>
+		<script type="text/javascript" src="/static/js/blend.js"></script>
+
+
+		
+
+
+		
+	</body>
+</html>

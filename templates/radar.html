@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Radar Chart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel='stylesheet' scr='text/css' href="/static/css/style.css">
+		<link rel="stylesheet" href="/static/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>
+		
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Coffee Ratings</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="/">Home</a></li>
+											<li><a href="/coffee_map">World Map</a></li>
+											<li><a href="/radar">Radar Chart</a></li>
+											<li><a href="https://coffeerating.herokuapp.com/" target="_blank">Predict Points</a></li>
+											<li><a href="/sean">About Sean Pei</a></li>
+											<li><a href="/gina">About Gina Na</a></li>
+
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+					<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Coffee Quality Features Dashboard</h2>
+							<p>Use the interactive charts below to explore the dataset</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+								<section>
+									<div class="col-md-12">
+										<div class="well">
+										  <h5>Choose Harvest Year:</h5>
+										  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+										</div>
+									  </div>
+									  <div class="col-md-4">
+										<div id="radar1"></div>
+									  </div>
+									  <div class="col-md-4">
+										<div id="radar2"></div>
+									  </div>
+									  <div class="col-md-4">
+										<div id="radar3"></div>
+									  </div>
+									</div>
+									<div class="row">
+									  <div class="col-md-12">
+										<div id="bubble"></div>
+									  </div>
+								</section>
+								
+								<section>
+									<!-- Tableau dashboard -->
+									<div class="col-md-12 text-center">
+										<h2>Top 10 Countries</h2> 
+										<h5>Total cup points</h>
+									</div>
+									<div class='tableauPlaceholder' id='viz1613466319987' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;To&#47;Top10Countries_testing&#47;Top10Countries&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Top10Countries_testing&#47;Top10Countries' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;To&#47;Top10Countries_testing&#47;Top10Countries&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1613466319987');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+										
+										</div>
+								</section>
+					
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Design: <a href="/sean">Sean Pei</a></li>
+						<li>Design: <a href="/gina">Gina Na</a></li>
+					</ul>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/static/js/jquery.min.js"></script>
+			<script src="/static/js/jquery.scrollex.min.js"></script>
+			<script src="/static/js/jquery.scrolly.min.js"></script>
+			<script src="/static/js/browser.min.js"></script>
+			<script src="/static/js/breakpoints.min.js"></script>
+			<script src="/static/js/util.js"></script>
+			<script src="/static/js/main.js"></script>
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+			<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+			<script src="/static/js/radar.js"></script>
+
+	</body>
+</html>

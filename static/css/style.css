@@ -1,0 +1,148 @@
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+  /* background-color: #9e739e; */
+}
+
+
+/* set map, body, and html to 100% of the screen size */
+
+body,
+html {
+  height: 100%;
+}
+
+#map{
+  height: 550px;
+  width: 1100px;
+  border-style: solid;
+  border-color: beige;
+  border-width: .1cm;
+}
+
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.info {
+  padding: 6px 10px;
+  font: 12px/18px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+/* #table td {
+  font-size: 1.25em;
+} */
+
+/* #table tbody td {
+  display: block;
+  text-align: center;
+} */
+
+thead.theadFormat { 
+  font-size: 14px;
+  text-align: center;
+  font-family: Georgia;
+}
+
+tbody.tbodyFormat { 
+  font-size: 13px;
+  text-align: center;
+  font-family: Georgia;
+ }
+
+h2 {
+  font-size: 18px;
+  font-family: Monaco;
+  text-align: center;
+
+}
+
+p {
+  font-family: Monaco;
+  text-align: left;
+}
+ 
+
+/* autocomplete */
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+/* p {
+  margin:auto;
+  text-align: center; */
+
+/* } */
+
+.well{
+  background-color:#2E3842;
+  /* color:#ffffff; */
+
+}
+
+#predict_content {
+  color:#2E3842;
+}
+
+#selDataset {
+  color:#ffffff
+}
