@@ -1,4 +1,5 @@
 # Coffee_Rating
+![Alt Text](https://github.com/SeanPei-coder/Coffee_Rating/blob/main/demo.gif)
 
 
 Highly interactive webpage to explore and visualize coffee bean dataset.
